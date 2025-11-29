@@ -2,17 +2,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Macondo&family=Oswald:wght@200..700&display=swap");
 
-/*CSS Variables*/
+/* CSS Variables */
 :root {
     --primary-font: "Inter", sans-serif;
     --secondary-font: "Macondo", cursive;
     --primary-color: #3a2620; /* dark brown */
-    --secondary-color: #aa9581; /* light beige */
+    --secondary-color: #aa9581; /* light brown */
     --highlight-color: #416a8e; /* blue */
     --highlight-color-light: #7a9fc2; /* light blue */
 }
 
-/*Global Styles*/
+/* Global styles */
+
 body {
     font-family: var(--primary-font);
 }
@@ -22,20 +23,42 @@ h2,
 h3 {
     font-family: var(--secondary-font);
     color: var(--primary-color);
+    text-transform: uppercase;
 }
 
 .sub-heading-color {
     color: var(--highlight-color);
 }
 
-/* Grid visualisation CSS for testing */
+.section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 
-.container,
+/* Navbar */
+
+#navbar {
+    background-color: var(--primary-color);
+}
+
+#navbar .logo {
+    width: 30px;
+}
+
+/* Header */
+
+#header .lead {
+    font-family: var(--secondary-font);
+}
+
+/* grid visualisation CSS for testing */
+
+/* .container,
 .row {
     border: 2px solid black;
 }
 
 .col-12 {
     border: 2px solid white;
-    background-color: lightgrey;
-}
+    background-color: lightgray;
+} */

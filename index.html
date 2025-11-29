@@ -327,6 +327,48 @@
     <!-- Font Awesome kit -->
     <script src="https://kit.fontawesome.com/aa9af45995.js" crossorigin="anonymous"></script>
 
+    <!-- Navbar collapse script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+            const navbarCollapse = document.getElementById('navbarNav');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+
+                    // Check if it's an internal link (starts with #)
+                    if (href && href.startsWith('#')) {
+
+                        // Close the mobile menu
+                        if (navbarCollapse.classList.contains('show')) {
+                            // Use Bootstrap's Collapse instance
+                            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                            bsCollapse.hide();
+                        }
+
+                        // Handle smooth scrolling
+                        const section = document.querySelector(href);
+                        if (section) {
+                            e.preventDefault();
+                            const navbar = document.getElementById('navbar');
+                            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+                            // Delay scroll to allow menu to close
+                            setTimeout(() => {
+                                window.scrollTo({
+                                    top: section.offsetTop - navbarHeight,
+                                    behavior: 'smooth'
+                                });
+                            }, 300);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>

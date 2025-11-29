@@ -205,4 +205,16 @@ h2 {
         min-height: 195px;
     }
 }
+
+/* Small screens and up */
+@media screen and (max-width: 992px) {
+    .custom-button-filled {
+        border: 2px solid var(--highlight-color);
+        background-color: var(--highlight-color);
+        color: white;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
 /* End of styles.css */
